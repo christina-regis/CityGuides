@@ -3,3 +3,11 @@ Travel to a new city and live like a local.  With this app you can find a great 
 
 
 
+####Technologies
+
+* Node.js
+* Angular
+* MongoDB
+* Express
+* Passport
+* 
