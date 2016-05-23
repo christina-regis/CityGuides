@@ -1,0 +1,30 @@
+{
+  "name": "city_guides",
+  "version": "1.0.0",
+  "description": "Travel to a new city and live like a local.  With this app you can find a great place to stay with a host that is excited to show you around the city.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christina-regis/CityGuides.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christina-regis/CityGuides/issues"
+  },
+  "homepage": "https://github.com/christina-regis/CityGuides#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.6",
+    "body-parser": "^1.15.1",
+    "connect-ensure-login": "^0.1.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.17",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
