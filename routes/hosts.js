@@ -4,8 +4,11 @@ var router = express.Router();
 
 router.route('/')
   .get(hostsController.index)
-  // .post(hostsController.create);
+  .post(hostsController.create);
 
-// router.route('/:id')
-//   .patch(hostsController.update)
-//   .delete(hostsController.destroy);
+router.route('/:id')
+  .get(hostsController.show)
+  .patch(hostsController.update)
+  .delete(hostsController.destroy);
+
+module.exports = router;

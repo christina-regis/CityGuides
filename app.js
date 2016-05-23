@@ -4,18 +4,9 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var db = require('./db.js');
 
 var port = process.env.PORT || 3000;
-
-//mongo connection
-var mongoose = require('mongoose');
-var mongoURL = process.env.MONGO_URL || 'mongodb://localhost/city_guides';
-mongoose.connect(mongoURL, function(err){
-  if (err){
-    return console.log('Cannot connect to database', err);
-  }
-  return console.log('Database connected');
-});
 
 var app = express();
 //to allow front to access back
@@ -32,12 +23,12 @@ app.use(allowCrossDomain);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(session({secret: config.sessions_secret, resave: false, saveUninitialized: false}));
+// app.use(session({secret: config.sessions_secret, resave: false, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 
 //setting route
-var hostRoutes = require('./routes/hostss.js');
+var hostRoutes = require('./routes/hosts.js');
 app.use('/hosts', hostRoutes);
 
 app.listen(port);
