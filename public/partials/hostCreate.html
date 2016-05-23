@@ -1,0 +1,19 @@
+<h3>Hosts Create a profile</h3>
+<form>
+  <label>First Name</label>
+  <input type="text" ng-model="hcreatectrl.newHost.firstName">
+  <br>
+  <label>Last Name</label>
+  <input type="text" ng-model="hcreatectrl.newHost.lastName">
+  <br>
+  <label>Email</label>
+  <input type="text" ng-model="hcreatectrl.newHost.email">
+  <br>
+  <label>About Me</label>
+  <textarea type="text" ng-model="hcreatectrl.newHost.aboutMe"></textarea>
+  <br>
+  <label>Things I Like</label>
+  <textarea type="text" ng-model="hcreatectrl.newHost.thingsILike"></textarea>
+  <br>
+  <button ng-click="hcreatectrl.addHost()">Create Profile</button>
+</form>
