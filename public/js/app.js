@@ -21,6 +21,12 @@ function configuration($stateProvider, $urlRouterProvider){
       url:'/host/:hostId',
       templateUrl: 'partials/hostShow.html',
       controller: 'HostShowController as hshowctrl'
+    })
+
+    .state('guestIndex', {
+      url: '/guest/index',
+      templateUrl: 'partials/guestIndex.html',
+      controller: 'GuestIndexController as gindexctrl'
     });
 
 }
