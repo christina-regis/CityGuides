@@ -1,5 +1,5 @@
 <h3>Hosts Index</h3>
 <ul>
-  <li ng-repeat="host in hindexctrl.allHosts">{{host.firstName}}</li>
+  <li ng-repeat="host in hindexctrl.allHosts">{{host.firstName}} <a href="#/host/{{host._id}}"><button>See profile</button></a></li>
 </ul>
 <a ui-sref="hostCreate">Create a profile</a>

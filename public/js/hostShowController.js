@@ -1,20 +1,23 @@
 angular.module('cityGuidesApp')
   .controller('HostShowController', HostShowController);
 
-HostShowController.$inject = ['$http'];
+HostShowController.$inject = ['$http', '$stateParams'];
 
-function HostShowController($http){
+function HostShowController($http, $stateParams){
   var self = this;
-  self.show = show;
 
-  function show(){
+  self.show = show;
+  self.host = null
+
+
+  function show(hostId){
+    console.log(hostId);
     $http
-      .get('https://city-guides.herokuapp.com/hosts/:id')
-      // .get('http://localhost:3000/hosts/:id')
+      .get('http://localhost:3000/hosts/' + hostId)
       .then(function(response){
         console.log(response);
-        self.allHosts = response.data;
+        self.host = response
       });
   }
-  index();
+  show($stateParams.hostId);
 }

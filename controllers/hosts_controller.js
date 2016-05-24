@@ -30,7 +30,7 @@ hosts.create = function(req, res){
 hosts.show = function(req, res){
   Host.findById(req.params.id, function(err, host){
     if(err) throw (err);
-    res.json({success: true, message: 'show host'});
+    res.json(host);
   });
 };
 

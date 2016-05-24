@@ -18,7 +18,7 @@ function configuration($stateProvider, $urlRouterProvider){
     })
 
     .state('hostShow', {
-      url:'/host/show',
+      url:'/host/:hostId',
       templateUrl: 'partials/hostShow.html',
       controller: 'HostShowController as hshowctrl'
     });
