@@ -12,7 +12,8 @@ function HostCreateController($http){
 
   function index(){
     $http
-      .get('http://localhost:3000/hosts')
+      .get('https://city-guides.herokuapp.com/hosts')
+      // .get('http://localhost:3000/hosts')
       .then(function(response){
         console.log(response);
         self.allHosts = response.data;
@@ -21,7 +22,8 @@ function HostCreateController($http){
 
   function addHost(){
     $http
-      .post('http://localhost:3000/hosts', self.newHost)
+      .post('http://city-guides.herokuapp.com/hosts', self.newHost)
+      // .post('http://localhost:3000/hosts', self.newHost)
       .then(function(response){
         console.log(response);
         index();

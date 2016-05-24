@@ -11,7 +11,8 @@ function HostIndexController($http){
 
   function index(){
     $http
-      .get('http://localhost:3000/hosts')
+      .get('http://city-guides.herokuapp.com/hosts')
+      // .get('http://localhost:3000/hosts')
       .then(function(response){
         console.log(response);
         self.allHosts = response.data;
