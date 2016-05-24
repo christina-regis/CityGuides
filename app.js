@@ -33,9 +33,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-//setting route
+//setting routes
 var hostRoutes = require('./routes/hosts.js');
 app.use('/hosts', hostRoutes);
+var guestRoutes = require('./routes/guests.js');
+app.use('/guests', guestRoutes);
 
 app.listen(port);
 console.log('puppies are listenng on port ' + port);

@@ -12,11 +12,10 @@ guests.index = function(req, res){
   });
 };
 
-
 guests.create = function(req, res){
   var guest = new Guest();
   guest.username = req.body.username;
-  guest.password = host.encrypt(req.body.password);
+  guest.password = guest.encrypt(req.body.password);
   guest.firstName = req.body.firstName;
   guest.lastName = req.body.lastName;
   guest.email = req.body.email;

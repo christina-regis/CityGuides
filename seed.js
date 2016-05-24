@@ -1,5 +1,6 @@
 db = require('./db.js');
 var Host = require('./models/hosts_model.js');
+var Guest = require('./models/guests_model.js');
 
 Host.remove({}, function(){
   Host.create({
@@ -21,4 +22,21 @@ Host.remove({}, function(){
     process.exit();
   });
 });
+
+Guest.remove({}, function(){
+  Guest.create({
+    username: 'guest',
+    password: 'guest',
+    firstName: 'Billy',
+    lastName: 'Ray',
+    email: 'billy@gmail.com',
+    aboutMe: 'I grew up in the south and am excited to travel to other parts of the country to meet new people and experience new things',
+    thingsILike: 'eating, swimming'
+  }, function(err, guest){
+    if (err) return err;
+    process.exit();
+  });
+});
+
+
 
