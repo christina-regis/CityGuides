@@ -14,6 +14,8 @@ hosts.index = function(req, res){
 
 hosts.create = function(req, res){
   var host = new Host();
+  host.username = req.body.username;
+  host.password = host.encrypt(req.body.password);
   host.firstName = req.body.firstName;
   host.lastName = req.body.lastName;
   host.email = req.body.email;

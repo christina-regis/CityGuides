@@ -1,2 +1,49 @@
-<h3>Hello, {{hshowctrl.host.data.firstName}}</h3>
+<div ng-if="hshowctrl.show">
+  <h4>Name: {{hshowctrl.host.data.firstName}} {{hshowctrl.host.data.lastName}}</h4>
+  <p>Location: {{hshowctrl.host.data.neighborhood}}, {{hshowctrl.host.data.city}}, {{hshowctrl.host.data.state}}</p>
+  <p>Attractions Near me: {{hshowctrl.host.data.attractionsNearMe}}</p>
+  <p>About My Space: {{hshowctrl.host.data.aboutMyRental}}</p>
+  <p>about me:{{hshowctrl.host.data.aboutMe}}</p>
+  <p>interests: {{hshowctrl.host.data.thingsILike}}</p>
+  <p>email: {{hshowctrl.host.data.email}}</p>
+  <button ng-click="hshowctrl.showForm()">update profile</button>
+</div>
+
+
+<!-- can update but need to show info that was already created -->
+<div ng-if="!hshowctrl.show">
+  <form ng-controller="HostCreateController as hcreatectrl">
+    <label>First Name</label>
+    <input type="text" ng-model="hcreatectrl.newHost.firstName">
+    <br>
+    <label>Last Name</label>
+    <input type="text" ng-model="hcreatectrl.newHost.lastName">
+    <br>
+    <label>Email</label>
+    <input type="text" ng-model="hcreatectrl.newHost.email">
+    <br>
+    <label>State</label>
+    <input type="text" ng-model="hcreatectrl.newHost.state">
+    <br>
+    <label>City</label>
+    <input type="text" ng-model="hcreatectrl.newHost.city">
+    <br>
+    <label>Neighborhood</label>
+    <input type="text" ng-model="hcreatectrl.newHost.neighborhood">
+    <br>
+    <label>Attractions near me</label>
+    <input type="text" ng-model="hcreatectrl.newHost.attractionsNearMe">
+    <br>
+    <label>About Me</label>
+    <textarea type="text" ng-model="hcreatectrl.newHost.aboutMe"></textarea>
+    <br>
+    <label>About my space</label>
+    <textarea type="text" ng-model="hcreatectrl.newHost.aboutMyRental"></textarea>
+    <br>
+    <label>Things I Like</label>
+    <textarea type="text" ng-model="hcreatectrl.newHost.thingsILike"></textarea>
+    <br>
+    <button ng-click="hcreatectrl.addHost()">Save profile</button>
+  </form>
+</div>
 

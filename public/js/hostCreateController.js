@@ -13,17 +13,16 @@ function HostCreateController($http){
   function index(){
     $http
       .get('https://localhost:3000/hosts')
-      // .get('http://localhost:3000/hosts')
       .then(function(response){
         console.log(response);
         self.allHosts = response.data;
       });
   }
 
+//need to redirect to profile page
   function addHost(){
     $http
       .post('http://localhost:3000/hosts', self.newHost)
-      // .post('http://localhost:3000/hosts', self.newHost)
       .then(function(response){
         console.log(response);
         index();

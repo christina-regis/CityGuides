@@ -1,5 +1,6 @@
 var express = require('express');
 var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
@@ -19,8 +20,13 @@ var allowCrossDomain = function(req, res, next) {
 };
 app.use(allowCrossDomain);
 
+require('./config/passport.js')(passport, Strategy);
+
+app.set('view engine', 'ejs');
+
 //middleware
 app.use(logger('dev'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 // app.use(session({secret: config.sessions_secret, resave: false, saveUninitialized: false}));
