@@ -5,7 +5,6 @@ HostIndexController.$inject = ['$http'];
 
 function HostIndexController($http){
   var self = this;
-  self.puppy = 'hello';
   self.newHost = {};
   self.allHosts = [];
   self.index = index;

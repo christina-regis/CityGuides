@@ -5,7 +5,6 @@ HostCreateController.$inject = ['$http'];
 
 function HostCreateController($http){
   var self = this;
-  self.hello = 'puppies!';
   self.newHost = {};
   self.allHosts = [];
   self.index = index;
