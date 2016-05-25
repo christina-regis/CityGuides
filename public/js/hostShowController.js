@@ -1,9 +1,9 @@
 angular.module('cityGuidesApp')
   .controller('HostShowController', HostShowController);
 
-HostShowController.$inject = ['$http', '$stateParams'];
+HostShowController.$inject = ['$http', '$stateParams', '$location'];
 
-function HostShowController($http, $stateParams){
+function HostShowController($http, $stateParams, $location){
   var self = this;
 
   self.show = show;
@@ -13,18 +13,6 @@ function HostShowController($http, $stateParams){
   self.allHosts = [];
   self.showForm =showForm;
   self.shown = true;
-  self.allHosts = [];
-  self.index = index;
-
-  function index(){
-    $http
-      .get('http://localhost:3000/hosts')
-      .then(function(response){
-        console.log(response);
-        self.allHosts = response.data;
-      });
-  }
-  index();
 
   function show(hostId){
     $http
@@ -36,13 +24,12 @@ function HostShowController($http, $stateParams){
   }
   show($stateParams.hostId);
 
-//not working
   function updateHost(hostId){
     $http
       .patch('http://localhost:3000/hosts/' + hostId, self.host.data)
       .then(function(response){
         console.log(response);
-        index();
+        $location.path('host/index');
       });
       self.newHost = {};
   }
