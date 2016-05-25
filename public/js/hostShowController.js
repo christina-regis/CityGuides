@@ -12,7 +12,19 @@ function HostShowController($http, $stateParams){
   self.newHost = {};
   self.allHosts = [];
   self.showForm =showForm;
-  self.show = true;
+  self.shown = true;
+  self.allHosts = [];
+  self.index = index;
+
+  function index(){
+    $http
+      .get('http://localhost:3000/hosts')
+      .then(function(response){
+        console.log(response);
+        self.allHosts = response.data;
+      });
+  }
+  index();
 
   function show(hostId){
     $http
@@ -27,7 +39,7 @@ function HostShowController($http, $stateParams){
 //not working
   function updateHost(hostId){
     $http
-      .post('http://localhost:3000/hosts/' + hostId)
+      .patch('http://localhost:3000/hosts/' + hostId, self.host.data)
       .then(function(response){
         console.log(response);
         index();
@@ -37,10 +49,10 @@ function HostShowController($http, $stateParams){
 
   function showForm(){
     console.log('showform function');
-    if(self.show){
-      self.show = false;
+    if(self.shown){
+      self.shown = false;
     } else {
-      self.show = true;
+      self.shown = true;
     }
   }
 }
