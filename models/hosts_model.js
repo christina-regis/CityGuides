@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var hostSchema = mongoose.Schema({
-  username: String,
+
+  email: String,
   password: String,
   firstName: String,
   lastName: String,
@@ -10,7 +11,6 @@ var hostSchema = mongoose.Schema({
   city: String,
   neighborhood: String,
   attractionsNearMe: String,
-  email: String,
   aboutMe: String,
   aboutMyRental: String,
   thingsILike: String

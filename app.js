@@ -22,8 +22,6 @@ app.use(allowCrossDomain);
 
 require('./config/passport.js')(passport, Strategy);
 
-app.set('view engine', 'ejs');
-
 //middleware
 app.use(logger('dev'));
 app.use(cookieParser());
@@ -34,6 +32,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //setting routes
+var authRoutes = require('./routes/auth.js');
+app.use('/auth', authRoutes);
 var hostRoutes = require('./routes/hosts.js');
 app.use('/hosts', hostRoutes);
 var guestRoutes = require('./routes/guests.js');

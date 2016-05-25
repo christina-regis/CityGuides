@@ -9,41 +9,40 @@
   <button ng-click="hshowctrl.showForm()">update profile</button>
 </div>
 
-
-<!-- can update but need to show info that was already created -->
 <div ng-if="!hshowctrl.show">
-  <form ng-controller="HostCreateController as hcreatectrl">
+  <form>
     <label>First Name</label>
-    <input type="text" ng-model="hcreatectrl.newHost.firstName">
+    <input type="text" ng-model="hshowctrl.host.data.firstName">
     <br>
     <label>Last Name</label>
-    <input type="text" ng-model="hcreatectrl.newHost.lastName">
+    <input type="text" ng-model="hshowctrl.host.data.lastName">
     <br>
     <label>Email</label>
-    <input type="text" ng-model="hcreatectrl.newHost.email">
+    <input type="text" ng-model="hshowctrl.host.data.email">
     <br>
     <label>State</label>
-    <input type="text" ng-model="hcreatectrl.newHost.state">
+    <input type="text" ng-model="hshowctrl.host.data.state">
     <br>
     <label>City</label>
-    <input type="text" ng-model="hcreatectrl.newHost.city">
+    <input type="text" ng-model="hshowctrl.host.data.city">
     <br>
     <label>Neighborhood</label>
-    <input type="text" ng-model="hcreatectrl.newHost.neighborhood">
+    <input type="text" ng-model="hshowctrl.host.data.neighborhood">
     <br>
     <label>Attractions near me</label>
-    <input type="text" ng-model="hcreatectrl.newHost.attractionsNearMe">
+    <input type="text" ng-model="hshowctrl.host.data.attractionsNearMe">
     <br>
     <label>About Me</label>
-    <textarea type="text" ng-model="hcreatectrl.newHost.aboutMe"></textarea>
+    <textarea type="text" ng-model="hshowctrl.host.data.aboutMe"></textarea>
     <br>
     <label>About my space</label>
-    <textarea type="text" ng-model="hcreatectrl.newHost.aboutMyRental"></textarea>
+    <textarea type="text" ng-model="hshowctrl.host.data.aboutMyRental"></textarea>
     <br>
     <label>Things I Like</label>
-    <textarea type="text" ng-model="hcreatectrl.newHost.thingsILike"></textarea>
+    <textarea type="text" ng-model="hshowctrl.host.data.thingsILike"></textarea>
     <br>
-    <button ng-click="hcreatectrl.addHost()">Save profile</button>
+    <button ng-click="hshowctrl.updateHost()">Update profile</button>
   </form>
 </div>
+
 

@@ -1,4 +1,5 @@
 <h3>Guests Index</h3>
 <ul>
-  <li ng-repeat="guest in gindexctrl.allGuests">{{guest.firstName}}</li>
+  <li ng-repeat="guest in gindexctrl.allGuests">{{guest.firstName}} <a href="#/guest/{{guest._id}}"><button>See profile</button></a></li>
 </ul>
+<a ui-sref="guestCreate">Create a profile</a>

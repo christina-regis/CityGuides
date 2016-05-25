@@ -8,6 +8,9 @@ function HostShowController($http, $stateParams){
 
   self.show = show;
   self.host = null;
+  self.updateHost =updateHost;
+  self.newHost = {};
+  self.allHosts = [];
   self.showForm =showForm;
   self.show = true;
 
@@ -20,6 +23,17 @@ function HostShowController($http, $stateParams){
       });
   }
   show($stateParams.hostId);
+
+//not working
+  function updateHost(hostId){
+    $http
+      .post('http://localhost:3000/hosts/' + hostId)
+      .then(function(response){
+        console.log(response);
+        index();
+      });
+      self.newHost = {};
+  }
 
   function showForm(){
     console.log('showform function');

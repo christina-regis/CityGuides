@@ -1,0 +1,14 @@
+<input type="text">
+ <button><a href="#/host/index">Search</a></button>
+<br>
+<br>
+
+<h4>Login as a host</h4>
+<form ng-submit="authctrl.submit">
+  <label>email</label>
+  <input type="text" ng-model="authctrl.auth.email">
+  <label>password</label>
+  <input type="text" ng-model="authctrl.auth.password">
+  <button ng-click="authctrl.login()">Login</button>
+</form>
+<button><a href="#/host/create">Create a login</a></button>
