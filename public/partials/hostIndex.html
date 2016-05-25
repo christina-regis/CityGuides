@@ -1,5 +1,45 @@
-<h3>Hosts Index</h3>
-<ul>
-  <li ng-repeat="host in hindexctrl.allHosts">{{host.firstName}} <a href="#/host/{{host._id}}"><button>See profile</button></a></li>
-</ul>
-<a ui-sref="hostCreate">Create a profile</a>
+<h3>Choose a city to visit</h3>
+
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"></div>
+        <input type="text" class="form-control" placeholder="Search cities" ng-model="hindexctrl.searchCities">
+      </div>
+    </div>
+  </form>
+
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>
+          <a href="#/host/index" ng-click="hindexctrl.sortType = 'name'; sortReverse = !sortReverse">
+           City
+            <span ng-show="hindexctrl.sortType == 'name' && !sortReverse"></span>
+            <span ng-show="hindexctrl.sortType == 'name' && sortReverse"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#/host/index" ng-click="hindexctrl.sortType = 'state'; sortReverse = !sortReverse">
+          State
+            <span ng-show="sortType == 'state' && !sortReverse"></span>
+            <span ng-show="sortType == 'state' && sortReverse"></span>
+          </a>
+        </td>
+        <td>
+        More Info
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="host in hindexctrl.allHosts | orderBy:sortType:sortReverse | filter:searchCities">
+        <td>{{host.city}}</td>
+        <td>{{host.state}}</td>
+        <td><a href="#/host/{{host._id}}"><button>See profile</button></a></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

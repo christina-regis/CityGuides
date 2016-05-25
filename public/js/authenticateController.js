@@ -3,20 +3,20 @@ angular.module('cityGuidesApp')
 
 AuthenticateController.$inject = ['$http', '$stateParams', '$location'];
 
-function AuthenticateController($http, $stateParams){
+function AuthenticateController($http, $stateParams, $location){
   var self = this;
   self.login = login;
   self.auth = {};
+  self.password = '';
 
-//how to redirect to hosts index
-  function login($location){
-    console.log("login function");
+//check password
+  function login(){
     $http
       .post('http://localhost:3000/auth', self.auth)
       .then(function(response){
         console.log(response);
-        $location.path('hostIndex');
-
+          $location.path('host/index');
       });
   }
 }
+

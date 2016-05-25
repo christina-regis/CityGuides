@@ -1,9 +1,9 @@
 angular.module('cityGuidesApp')
   .controller('HostCreateController', HostCreateController);
 
-HostCreateController.$inject = ['$http'];
+HostCreateController.$inject = ['$http', '$location'];
 
-function HostCreateController($http){
+function HostCreateController($http, $location){
   var self = this;
   self.newHost = {};
   self.allHosts = [];
@@ -26,6 +26,7 @@ function HostCreateController($http){
       .post('http://localhost:3000/hosts', self.newHost)
       .then(function(response){
         console.log(response);
+        $location.path('host/index');
         index();
       });
       self.newHost = {};

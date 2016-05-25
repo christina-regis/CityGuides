@@ -8,6 +8,10 @@ function HostIndexController($http){
   self.newHost = {};
   self.allHosts = [];
   self.index = index;
+  self.sortType = 'city';
+  self.sortReverse = false;
+  //searchCities not working
+  self.searchCities = '';
 
   function index(){
     $http
