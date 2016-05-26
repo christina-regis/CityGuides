@@ -1,27 +1,28 @@
-<button><a href="#/host/index">See all available locations</a></button>
-<br>
-<br>
+<div class="container">
+  <h4>Host Login</h4>
+  <form class="form-inline">
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="email" ng-model="authctrl.auth.email">
+      <input class="form-control" type="password" placeholder="password" ng-model="authctrl.auth.password">
+      <button class="btn btn-info" ng-click="authctrl.login()">Login</button>
+    </div>
+  </form>
+  <a class="btn btn-default" ui-sref="hostCreate">Host Sign Up</a>
 
-<h4>Host Login</h4>
-<form>
-  <label>email</label>
-  <input type="text" ng-model="authctrl.auth.email">
-  <label>password</label>
-  <input type="password" ng-model="authctrl.auth.password">
-  <button ng-click="authctrl.login()">Login</button>
-</form>
-<a ui-sref="hostCreate">Host Sign Up</a>
+  <br>
+  <br>
 
-<br>
-<br>
-
-<h4>Guest Login</h4>
-<form>
-  <label>email</label>
-  <input type="text" ng-model="authctrl.gauth.email">
-  <label>password</label>
-  <input type="password" ng-model="authctrl.gauth.password">
-  <button ng-click="authctrl.Glogin()">Login</button>
-</form>
-<a ui-sref="guestCreate">Guest Sign Up</a>
-
+  <h4>Guest Login</h4>
+  <form class="form-inline">
+    <div class="form-group">
+      <input class="form-control" type="text" placeholer="email" ng-model="authctrl.gauth.email">
+      <input class="form-control" type="password" placeholder="password" ng-model="authctrl.gauth.password">
+      <button class="btn btn-info" ng-click="authctrl.Glogin()">Login</button>
+    </div>
+  </form>
+  <a class="btn btn-default" ui-sref="guestCreate">Guest Sign Up</a>
+  <br>
+  <br>
+  <h4>Don't want to login?</h4>
+  <a class="btn btn-info" href="#/host/index">Search Cities</a>
+</div>
