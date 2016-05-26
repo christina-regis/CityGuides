@@ -10,7 +10,9 @@ hosts.authenticate = function(req, res){
     var password = req.body.password;
     Host.findOne( { email: email } )
       .then(function(host){
+        if(host.password === req.body.password){
         res.json(host);
+        }
       });
   }
 };

@@ -29,11 +29,6 @@ function configuration($stateProvider, $urlRouterProvider){
       controller: 'GuestIndexController as gindexctrl'
     })
 
-    .state('guestShow', {
-      url:'/guest/:guestId',
-      templateUrl: 'partials/guestShow.html',
-      controller: 'GuestShowController as gshowctrl'
-    })
 
     .state('guestCreate', {
       url:'/guest/create',
@@ -41,6 +36,11 @@ function configuration($stateProvider, $urlRouterProvider){
       controller: 'GuestCreateController as gcreatectrl'
     })
 
+    .state('guestShow', {
+      url:'/guest/:guestId',
+      templateUrl: 'partials/guestShow.html',
+      controller: 'GuestShowController as gshowctrl'
+    })
     .state('authenticate', {
       url: '/authenticate',
       templateUrl: 'partials/authenticate.html',
