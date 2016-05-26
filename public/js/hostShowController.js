@@ -16,7 +16,7 @@ function HostShowController($http, $stateParams, $location){
 
   function show(hostId){
     $http
-      .get('http://localhost:3000/hosts/' + hostId)
+      .get('/hosts/' + hostId)
       .then(function(response){
         console.log(response);
         self.host = response;
@@ -26,7 +26,7 @@ function HostShowController($http, $stateParams, $location){
 
   function updateHost(hostId){
     $http
-      .patch('http://localhost:3000/hosts/' + hostId, self.host.data)
+      .patch('/hosts/' + hostId, self.host.data)
       .then(function(response){
         console.log(response);
         $location.path('host/index');

@@ -25,21 +25,26 @@ app.use(allowCrossDomain);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-require('./config/passport.js')(passport, Strategy);
+require('./config/passport')(passport, Strategy);
 
 //middleware
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(session({secret: config.sessions_secret, resave: false, saveUninitialized: false}));
+//app.use(session({secret: config.sessions_secret, resave: false, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
+
+require('./routes/index')(app, passport);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 //setting routes
-var authRoutes = require('./routes/auth.js');
+var authRoutes = require('./routes/hostAuth.js');
 app.use('/auth', authRoutes);
+var gauthRoutes = require('./routes/guestAuth.js');
+app.use('/gauth', gauthRoutes);
 var hostRoutes = require('./routes/hosts.js');
 app.use('/hosts', hostRoutes);
 var guestRoutes = require('./routes/guests.js');

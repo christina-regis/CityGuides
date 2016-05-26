@@ -2,8 +2,8 @@ var Host = require('../models/hosts_model');
 
 module.exports = function(passport, Strategy) {
 
-  passport.use(new Strategy(function(username, password, cb) {
-    Host.findOne({username: username}, function(err, host) {
+  passport.use(new Strategy(function(email, password, cb) {
+    Host.findOne({email: email}, function(err, host) {
       if (err) return cb(err);
       if (!host) return cb(null, false);
       if (host.validPassword(password)) return cb(null, false);

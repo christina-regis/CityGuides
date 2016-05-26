@@ -3,13 +3,25 @@
 <br>
 
 <h4>Host Login</h4>
-<form ng-submit="authctrl.submit(password)">
+<form>
   <label>email</label>
   <input type="text" ng-model="authctrl.auth.email">
   <label>password</label>
   <input type="password" ng-model="authctrl.auth.password">
   <button ng-click="authctrl.login()">Login</button>
 </form>
+<a ui-sref="hostCreate">Host Sign Up</a>
+
 <br>
-<a ui-sref="hostCreate">Sign Up</a>
+<br>
+
+<h4>Guest Login</h4>
+<form>
+  <label>email</label>
+  <input type="text" ng-model="authctrl.gauth.email">
+  <label>password</label>
+  <input type="password" ng-model="authctrl.gauth.password">
+  <button ng-click="authctrl.Glogin()">Login</button>
+</form>
+<a ui-sref="guestCreate">Guest Sign Up</a>
 

@@ -15,7 +15,7 @@ function HostIndexController($http){
 
   function index(){
     $http
-      .get('http://localhost:3000/hosts')
+      .get('/hosts')
       .then(function(response){
         console.log(response);
         self.allHosts = response.data;

@@ -13,7 +13,7 @@ function GuestShowController($http, $stateParams){
 
   function show(guestId){
     $http
-      .get('http://localhost:3000/guests/' + guestId)
+      .get('/guests/' + guestId)
       .then(function(response){
         console.log(response);
         self.guest = response;

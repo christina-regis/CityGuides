@@ -12,7 +12,7 @@ function HostCreateController($http, $location){
 
   function index(){
     $http
-      .get('http://localhost:3000/hosts')
+      .get('/hosts')
       .then(function(response){
         console.log(response);
         self.allHosts = response.data;
@@ -23,7 +23,7 @@ function HostCreateController($http, $location){
   function addHost(){
     console.log('addhost function');
     $http
-      .post('http://localhost:3000/hosts', self.newHost)
+      .post('/hosts', self.newHost)
       .then(function(response){
         console.log(response);
         $location.path('host/index');

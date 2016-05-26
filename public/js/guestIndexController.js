@@ -11,7 +11,7 @@ function GuestIndexController($http){
 
   function index(){
     $http
-      .get('http://localhost:3000/guests')
+      .get('/guests')
       .then(function(response){
         console.log(response);
         self.allGuests = response.data;

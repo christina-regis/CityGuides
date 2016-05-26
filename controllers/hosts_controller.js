@@ -26,7 +26,7 @@ hosts.index = function(req, res){
 
 hosts.create = function(req, res){
   var host = new Host();
-  // host.password = host.encrypt(req.body.password);
+  host.password = host.encrypt(req.body.password);
   host.firstName = req.body.firstName;
   host.lastName = req.body.lastName;
   host.city = req.body.city;
@@ -56,7 +56,7 @@ hosts.update = function(req, res){
   Host.findById(req.params.id, function(err, host){
     host.update({
       email: req.body.email,
-      password: req.body.password,
+      password: host.encrypt(req.body.password),
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       state: req.body.state,

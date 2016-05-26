@@ -4,11 +4,10 @@ var Guest = require('./models/guests_model.js');
 
 Host.remove({}, function(){
   Host.create({
-    username: 'admin',
     password: 'admin',
     firstName: 'Emma',
     lastName: 'Sue',
-    email: 'emma@gmail.com',
+    email: 'admin@gmail.com',
     state: 'CA',
     city: 'Los Angeles',
     neighborhood: 'Venice',
@@ -25,7 +24,6 @@ Host.remove({}, function(){
 
 Guest.remove({}, function(){
   Guest.create({
-    username: 'guest',
     password: 'guest',
     firstName: 'Billy',
     lastName: 'Ray',

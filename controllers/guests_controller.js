@@ -3,6 +3,18 @@ var Guest = require('../models/guests_model.js');
 
 var guests = {};
 
+guests.authenticate = function(req, res){
+  if (req.body){
+  console.log("hello");
+    var email = req.body.email.toLowerCase();
+    var password = req.body.password;
+    Guest.findOne({email: email})
+      .then(function(guest){
+        res.json(guest);
+      });
+  }
+};
+
 guests.index = function(req, res){
   Guest.find({}, function(err, guests){
     if(err){
@@ -14,7 +26,6 @@ guests.index = function(req, res){
 
 guests.create = function(req, res){
   var guest = new Guest();
-  guest.username = req.body.username;
   guest.password = guest.encrypt(req.body.password);
   guest.firstName = req.body.firstName;
   guest.lastName = req.body.lastName;

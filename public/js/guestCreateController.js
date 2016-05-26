@@ -1,18 +1,18 @@
 angular.module('cityGuidesApp')
   .controller('GuestCreateController', GuestCreateController);
 
-GuestCreateController.$inject = ['$http'];
+GuestCreateController.$inject = ['$http', '$location'];
 
-function GuestCreateController($http){
+function GuestCreateController($http, $location){
   var self = this;
   self.newGuest = {};
   self.allGuests = [];
   self.index = index;
-  self.addGuest = add;
+  self.addGuest = addGuest;
 
   function index(){
     $http
-      .get('https://localhost:3000/guests')
+      .get('/guests')
       .then(function(response){
         console.log(response);
         self.allGuests = response.data;
@@ -22,12 +22,13 @@ function GuestCreateController($http){
 //need to redirect to profile page
 //create does not work
   function addGuest(){
+    console.log('addguest function');
     $http
-      .post('http://localhost:3000/guests', self.newGuest)
+      .post('/guests', self.newGuest)
       .then(function(response){
         console.log(response);
+        $location.path('host/index');
         index();
-        // $state.go('?')
       });
       self.newGuest = {};
   }
