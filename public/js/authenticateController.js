@@ -12,7 +12,7 @@ function AuthenticateController($http, $stateParams, $location){
 //check password
   function login(){
     $http
-      .post('http://localhost:3000/auth', self.auth)
+      .post('/', self.auth)
       .then(function(response){
         console.log(response);
           $location.path('host/index');
