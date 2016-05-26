@@ -1,50 +1,94 @@
-<div ng-if="hshowctrl.shown">
-  <h4>Name: {{hshowctrl.host.data.firstName}} {{hshowctrl.host.data.lastName}}</h4>
-  <p>Location: {{hshowctrl.host.data.neighborhood}}, {{hshowctrl.host.data.city}}, {{hshowctrl.host.data.state}}</p>
-  <p>Attractions Near me: {{hshowctrl.host.data.attractionsNearMe}}</p>
-  <p>About My Space: {{hshowctrl.host.data.aboutMyRental}}</p>
-  <p>about me:{{hshowctrl.host.data.aboutMe}}</p>
-  <p>interests: {{hshowctrl.host.data.thingsILike}}</p>
-  <p>email: {{hshowctrl.host.data.email}}</p>
-  <button ng-click="hshowctrl.showForm()">update profile</button>
+<div class="container">
+  <div ng-if="hshowctrl.shown">
+    <div><h4>{{hshowctrl.host.data.firstName}} {{hshowctrl.host.data.lastName}}</h4></div>
+    <div class="col-md-3">Location:</div><div class="col-md-9">{{hshowctrl.host.data.neighborhood}}, {{hshowctrl.host.data.city}}, {{hshowctrl.host.data.state}}</div>
+    <br>
+    <div class="col-md-3">Attractions Near me:</div><div class="col-md-9">{{hshowctrl.host.data.attractionsNearMe}}</div>
+    <br>
+    <div class="col-md-3">About My Space:</div><div class="col-md-9">{{hshowctrl.host.data.aboutMyRental}}</div>
+    <br>
+    <div class="col-md-3">About me:</div><div class="col-md-9">{{hshowctrl.host.data.aboutMe}}</div>
+    <br>
+    <div class="col-md-3">interests:</div><div class="col-md-9">{{hshowctrl.host.data.thingsILike}}</div>
+    <br>
+    <div class="col-md-3">email:</div><div class="col-md-9">{{hshowctrl.host.data.email}}</div>
+    <button class="btn btn-info" ng-click="hshowctrl.showForm()">update profile</button>
+  </div>
 </div>
 
 <div ng-if="!hshowctrl.shown">
-  <form>
-    <label>First Name</label>
-    <input type="text" ng-model="hshowctrl.host.data.firstName">
-    <br>
-    <label>Last Name</label>
-    <input type="text" ng-model="hshowctrl.host.data.lastName">
-    <br>
-    <label>Email</label>
-    <input type="text" ng-model="hshowctrl.host.data.email">
-    <br>
-    <label>Password</label>
-    <input type="text" ng-model="hshowctrl.host.data.password">
-    <br>
-    <label>State</label>
-    <input type="text" ng-model="hshowctrl.host.data.state">
-    <br>
-    <label>City</label>
-    <input type="text" ng-model="hshowctrl.host.data.city">
-    <br>
-    <label>Neighborhood</label>
-    <input type="text" ng-model="hshowctrl.host.data.neighborhood">
-    <br>
-    <label>Attractions near me</label>
-    <input type="text" ng-model="hshowctrl.host.data.attractionsNearMe">
-    <br>
-    <label>About Me</label>
-    <textarea type="text" ng-model="hshowctrl.host.data.aboutMe"></textarea>
-    <br>
-    <label>About my space</label>
-    <textarea type="text" ng-model="hshowctrl.host.data.aboutMyRental"></textarea>
-    <br>
-    <label>Things I Like</label>
-    <textarea type="text" ng-model="hshowctrl.host.data.thingsILike"></textarea>
-    <br>
-    <button ng-click="hshowctrl.updateHost(hshowctrl.host.data._id)">Update profile</button>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.firstName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.lastName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">State</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.state">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">City</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.city">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Neighborhood</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.neighborhood">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Attractions near me</label>
+      <div class="col-sm-10">
+        <input class"form-control" type="text" ng-model="hshowctrl.host.data.attractionsNearMe">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">About Me</label>
+      <div class="col-sm-10">
+        <textarea class"form-control" type="text" ng-model="hshowctrl.host.data.aboutMe"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">About my space</label>
+      <div class="col-sm-10">
+        <textarea class"form-control" type="text" ng-model="hshowctrl.host.data.aboutMyRental"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Things I Like</label>
+      <div class="col-sm-10">
+        <textarea class"form-control" type="text" ng-model="hshowctrl.host.data.thingsILike"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-info" ng-click="hshowctrl.updateHost(hshowctrl.host.data._id)">Update profile</button>
+      </div>
+    </div>
   </form>
 </div>
 
