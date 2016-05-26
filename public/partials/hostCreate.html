@@ -1,38 +1,79 @@
-<h3>Hosts Create a profile</h3>
-<form>
-  <label>First Name</label>
-  <input type="text" ng-model="hcreatectrl.newHost.firstName">
-  <br>
-  <label>Last Name</label>
-  <input type="text" ng-model="hcreatectrl.newHost.lastName">
-  <br>
-  <label>Email</label>
-  <input type="text" ng-model="hcreatectrl.newHost.email">
-  <br>
-  <label>Password</label>
-  <input type="text" ng-model="hcreatectrl.newHost.password">
-  <br>
-  <label>State</label>
-  <input type="text" ng-model="hcreatectrl.newHost.state">
-  <br>
-  <label>City</label>
-  <input type="text" ng-model="hcreatectrl.newHost.city">
-  <br>
-  <label>Neighborhood</label>
-  <input type="text" ng-model="hcreatectrl.newHost.neighborhood">
-  <br>
-  <label>Attractions near me</label>
-  <input type="text" ng-model="hcreatectrl.newHost.attractionsNearMe">
-  <br>
-  <label>About Me</label>
-  <textarea type="text" ng-model="hcreatectrl.newHost.aboutMe"></textarea>
-  <br>
-  <label>About my space</label>
-  <textarea type="text" ng-model="hcreatectrl.newHost.aboutMyRental"></textarea>
-  <br>
-  <label>Things I Like</label>
-  <textarea type="text" ng-model="hcreatectrl.newHost.thingsILike"></textarea>
-  <br>
-  <button ng-click="hcreatectrl.addHost()">Create Profile</button>
+<form class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <h3>Host Sign Up</h3>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.firstName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.lastName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">State</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.state">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">City</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.city">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Neighborhood</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.neighborhood">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Attractions near me</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="hcreatectrl.newHost.attractionsNearMe">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">About Me</label>
+    <div class="col-sm-10">
+      <textarea type="text" ng-model="hcreatectrl.newHost.aboutMe"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">About my space</label>
+    <div class="col-sm-10">
+      <textarea type="text" ng-model="hcreatectrl.newHost.aboutMyRental"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Things I Like</label>
+    <div class="col-sm-10">
+      <textarea type="text" ng-model="hcreatectrl.newHost.thingsILike"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-info" ng-click="hcreatectrl.addHost()">Create Profile</button>
+    </div>
+  </div>
 </form>
 

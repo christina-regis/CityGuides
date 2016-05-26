@@ -1,22 +1,49 @@
-<h3>Guests Create a profile</h3>
-<form>
-  <label>First Name</label>
-  <input type="text" ng-model="gcreatectrl.newGuest.firstName">
-  <br>
-  <label>Last Name</label>
-  <input type="text" ng-model="gcreatectrl.newGuest.lastName">
-  <br>
-  <label>Email</label>
-  <input type="text" ng-model="gcreatectrl.newGuest.email">
-  <br>
-  <label>Password</label>
-  <input type="text" ng-model="gcreatectrl.newGuest.password">
-  <br>
-  <label>About Me</label>
-  <textarea type="text" ng-model="gcreatectrl.newGuest.aboutMe"></textarea>
-  <br>
-  <label>Things I Like</label>
-  <textarea type="text" ng-model="gcreatectrl.newGuest.thingsILike"></textarea>
-  <br>
-  <button ng-click="gcreatectrl.addGuest()">Create Profile</button>
+
+<form class="form-horizontal">
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <h3>Guest Sign Up</h3>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input class"form-control" type="text" ng-model="gcreatectrl.newGuest.firstName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input class"form-control" type="text" ng-model="gcreatectrl.newGuest.lastName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input class"form-control" type="text" ng-model="gcreatectrl.newGuest.email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input lass"form-control" type="text" ng-model="gcreatectrl.newGuest.password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">About Me</label>
+    <div class="col-sm-10">
+      <textarea class"form-control" type="text" ng-model="gcreatectrl.newGuest.aboutMe"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Things I Like</label>
+    <div class="col-sm-10">
+      <textarea class"form-control" type="text" ng-model="gcreatectrl.newGuest.thingsILike"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-info" ng-click="gcreatectrl.addGuest()">Create Profile</button>
+    </div>
+  </div>
 </form>
