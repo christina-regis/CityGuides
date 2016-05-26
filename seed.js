@@ -37,40 +37,40 @@ Host.remove({}, function(){
     if (err) return  err;
     process.exit();
   });
-    Host.create({
-    password: 'greg',
-    firstName: 'Greg',
-    lastName: 'Connor',
-    email: 'greg@gmail.com',
-    state: 'TX',
-    city: 'Austin',
-    neighborhood: 'Tarrytown',
-    attractionsNearMe: 'parks, golf, restaurants',
-    aboutMe: 'I love to host new people and show the around my city.  Austin is know for its weirdness and definitely lives up to its name.  Come visit and let me show you why Austin is weird!',
-    aboutMyRental: 'My couch is available for rent.  It is super comfy and you are welcome to use anything is the kitchen I just ask that you clean up after yourself.',
-    thingsILike: 'eating, eating and EATING'
+  //   Host.create({
+  //   password: 'greg',
+  //   firstName: 'Greg',
+  //   lastName: 'Connor',
+  //   email: 'greg@gmail.com',
+  //   state: 'TX',
+  //   city: 'Austin',
+  //   neighborhood: 'Tarrytown',
+  //   attractionsNearMe: 'parks, golf, restaurants',
+  //   aboutMe: 'I love to host new people and show the around my city.  Austin is know for its weirdness and definitely lives up to its name.  Come visit and let me show you why Austin is weird!',
+  //   aboutMyRental: 'My couch is available for rent.  It is super comfy and you are welcome to use anything is the kitchen I just ask that you clean up after yourself.',
+  //   thingsILike: 'eating, eating and EATING'
 
-  }, function(err, host){
-    if (err) return  err;
-    process.exit();
-  });
-    Host.create({
-    password: 'john',
-    firstName: 'John',
-    lastName: 'Lee',
-    email: 'john@gmail.com',
-    state: 'NY',
-    city: 'New York City',
-    neighborhood: 'Greenwich Village',
-    attractionsNearMe: 'shopping, restraunts, bars, clubs, nightlife, public transportation',
-    aboutMe: 'I live the new york life, I like to work and play hard and am always on the go.  I love trying new things and being in NYC there is always something going on.',
-    aboutMyRental: 'My husband and I have a two bedroom one bath apartment with an available bedroom.  Our home is cozy and centrally located to everything.',
-    thingsILike: 'shopping, running, eating'
+  // }, function(err, host){
+  //   if (err) return  err;
+  //   process.exit();
+  // });
+  //   Host.create({
+  //   password: 'john',
+  //   firstName: 'John',
+  //   lastName: 'Lee',
+  //   email: 'john@gmail.com',
+  //   state: 'NY',
+  //   city: 'New York City',
+  //   neighborhood: 'Greenwich Village',
+  //   attractionsNearMe: 'shopping, restraunts, bars, clubs, nightlife, public transportation',
+  //   aboutMe: 'I live the new york life, I like to work and play hard and am always on the go.  I love trying new things and being in NYC there is always something going on.',
+  //   aboutMyRental: 'My husband and I have a two bedroom one bath apartment with an available bedroom.  Our home is cozy and centrally located to everything.',
+  //   thingsILike: 'shopping, running, eating'
 
-  }, function(err, host){
-    if (err) return  err;
-    process.exit();
-  });
+  // }, function(err, host){
+  //   if (err) return  err;
+  //   process.exit();
+  // });
 });
 
 Guest.remove({}, function(){
