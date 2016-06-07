@@ -6,8 +6,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
-        user: "christina.freeze@gmail.com",
-        pass: "12771Caswell"
+        user: "gaAdmissionsSystem@gmail.com",
+        pass: "15202ndst"
     }
 });
 
@@ -16,7 +16,7 @@ router.get('/email',function(req,res){
   res.render('email');
 });
 
-router.post('/',function(req, res){
+router.post('/email',function(req, res){
   var mailOptions = {
     to : req.body.to,
     subject : req.body.subject,
