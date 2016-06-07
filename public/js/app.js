@@ -45,6 +45,11 @@ function configuration($stateProvider, $urlRouterProvider){
       url: '/authenticate',
       templateUrl: 'partials/authenticate.html',
       controller: 'AuthenticateController as authctrl'
+    })
+    .state('email', {
+      url: '/email',
+      templateUrl: 'partials/email.html',
+      controller: 'EmailController as email',
     });
 
 }

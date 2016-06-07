@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var nodemailer = require('./routes/email.js');
 var db = require('./db.js');
 
 var port = process.env.PORT || 3000;
@@ -49,6 +50,8 @@ var hostRoutes = require('./routes/hosts.js');
 app.use('/hosts', hostRoutes);
 var guestRoutes = require('./routes/guests.js');
 app.use('/guests', guestRoutes);
+//nodemailer
+app.use('/email', nodemailer);
 
 app.listen(port);
 console.log('puppies are listenng on port ' + port);

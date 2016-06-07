@@ -13,6 +13,8 @@ function HostShowController($http, $stateParams, $location){
   self.allHosts = [];
   self.showForm =showForm;
   self.shown = true;
+  self.showEmail = showEmail;
+  self.email = false;
 
   function show(hostId){
     $http
@@ -40,6 +42,15 @@ function HostShowController($http, $stateParams, $location){
       self.shown = false;
     } else {
       self.shown = true;
+    }
+  }
+
+  function showEmail(){
+    console.log('showEmail function');
+    if(self.email === false) {
+      self.email = true;
+    } else {
+      self.email = false;
     }
   }
 }
