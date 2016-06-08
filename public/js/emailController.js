@@ -14,8 +14,8 @@ function EmailController($http, $location) {
       .post('/email', self.message)
       .then(function(response){
         console.log(response);
-        self.message = {};
-        window.alert("Email Sent");
       });
+      self.message = {};
+      window.alert("Email Sent");
   }
 }

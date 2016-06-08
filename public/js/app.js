@@ -49,7 +49,7 @@ function configuration($stateProvider, $urlRouterProvider){
     .state('email', {
       url: '/email',
       templateUrl: 'partials/email.html',
-      controller: 'EmailController as email',
+      controller: 'EmailController as emailctrl',
     });
 
 }

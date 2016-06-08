@@ -14,7 +14,7 @@
     <div class="col-md-3">email:</div><div class="col-md-9">{{hshowctrl.host.data.email}}</div>
     <button class="btn btn-info" ng-click="hshowctrl.showForm()">update profile</button>
     <a class="btn btn-info" href="#/host/index">Back to List</a>
-    <button class="btn btn-info" ng-click="hshowctrl.showEmail()">Email Host</button>
+    <a class="btn btn-info" href="#/email">Email Host</a>
   </div>
 </div>
 
@@ -95,7 +95,7 @@
 </div>
 <br>
 <br>
-<form ng-if="hshowctrl.email" class="form-horizontal">
+<!-- <form ng-if="hshowctrl.email" class="form-horizontal">
   <div class="form-group">
     <label for="emailLabel" class="col-sm-2 control-label">Your Email</label>
     <div class="col-sm-10">
@@ -111,7 +111,7 @@
   <div class="form-group">
     <label for="descriptionLabel" class="col-sm-2 control-label">Message</label>
     <div class="col-sm-10">
-      <textarea id="content" cols="40" row="5" ng-model="email.message.body" placeholder="Message"></textarea>
+      <textarea id="text" cols="40" row="5" ng-model="email.message.body" placeholder="Message"></textarea>
     </div>
   </div>
   <div class="form-group">
@@ -119,6 +119,6 @@
       <button id="send_email" ng-click="email.send()" class="btn btn-info">Send Email</button>
     </div>
   </div>
-</form>
+</form> -->
 
 
