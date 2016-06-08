@@ -11,13 +11,13 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
     }
 });
 
-router.get('/email',function(req,res){
+router.get('/',function(req,res){
   res.render('email');
 });
 
-router.post('/email',function(req, res){
+router.post('/',function(req, res){
   var mailOptions = {
-    from: "GA Admissions <gaAdmissionsSystem@gmail.com>",
+    from: "CityGuides <gaAdmissionsSystem@gmail.com>",
     to : "christina.freeze@gmail.com",
     subject : req.body.subject,
     body : req.body.body
